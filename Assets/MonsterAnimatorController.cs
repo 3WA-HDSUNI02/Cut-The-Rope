@@ -24,35 +24,30 @@ public class MonsterAnimatorController : MonoBehaviour
 
     private void Start()
     {
-        _detect.OnDetectStart += _detect_OnDetectStart;
-        _detect.OnDetectStop += _detect_OnDetectStop;
-
-        _eat.OnEat += _eat_OnEat;
-
+        _detect.OnDetectStart += DetectStart;
+        _detect.OnDetectStop += DetectStop;
+        _eat.OnEat += Eat;
     }
 
     private void OnDestroy()
     {
-        _detect.OnDetectStart -= _detect_OnDetectStart;
-        _detect.OnDetectStop -= _detect_OnDetectStop;
+        _detect.OnDetectStart -= DetectStart;
+        _detect.OnDetectStop -= DetectStop;
 
-        _eat.OnEat -= _eat_OnEat;
+        _eat.OnEat -= Eat;
     }
 
-    private void _eat_OnEat()
+    private void Eat()
     {
         _animator.SetTrigger(_eatTriggerParam);
     }
-
-    private void _detect_OnDetectStart()
+    private void DetectStart()
     {
         _animator.SetBool(_detectBoolParam, true);
     }
-    private void _detect_OnDetectStop()
+    private void DetectStop()
     {
         _animator.SetBool(_detectBoolParam, false);
     }
-
-
 
 }

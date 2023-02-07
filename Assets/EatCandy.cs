@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class EatCandy : MonoBehaviour
 {
-    [SerializeField] Animator _animator;
-
-
     public event Action OnEat;
 
     private void OnTriggerEnter2D(Collider2D collision)
