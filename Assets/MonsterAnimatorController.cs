@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,8 @@ public class MonsterAnimatorController : MonoBehaviour
     [Header("Animator")]
     [SerializeField] Transform _root;
     [SerializeField] Animator _animator;
-    [SerializeField] string _detectBoolParam;
-    [SerializeField] string _eatTriggerParam;
+    [SerializeField, AnimatorParam(nameof(_animator))] string _detectBoolParam;
+    [SerializeField, AnimatorParam(nameof(_animator))] string _eatTriggerParam;
 
     [Header("Component")]
     [SerializeField] DetectCandy _detect;
