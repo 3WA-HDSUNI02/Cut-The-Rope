@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2164304561542602425}
   - component: {fileID: 2164304561542602426}
   - component: {fileID: 2693812884153724052}
-  - component: {fileID: 2778538114920609004}
-  m_Layer: 0
+  - component: {fileID: 3079897350819912156}
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.00000011920929, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &2778538114920609004
+--- !u!114 &3079897350819912156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,9 +111,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2164304561542602424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e686788a5e75c47908b0a53d6a94c1, type: 3}
+  m_Script: {fileID: 11500000, guid: ba170ddadf8b07c46935e2e46de03665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _joint: {fileID: 2164304562256393941}
 --- !u!1 &2164304562256393940
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +185,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.0069430172, y: 0.41362667}
-  m_ConnectedAnchor: {x: -0.326943, y: -1.8363733}
+  m_ConnectedAnchor: {x: 1.273057, y: 7.1636267}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0

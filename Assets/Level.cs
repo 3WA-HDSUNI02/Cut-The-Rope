@@ -9,7 +9,6 @@ public class Level : MonoBehaviour
 {
     [SerializeField] int _nextScene;
 
-
     Monster Monster { get; set; }
     public List<Star> Stars { get; private set; }
 
@@ -28,16 +27,16 @@ public class Level : MonoBehaviour
     {
         Stars = FindObjectsOfType<Star>().ToList();
 
-        if(Stars.Count > 0)
+        foreach(Star star in Stars)
         {
-            Debug.Log("Not Completed, restart");
-            SceneManager.LoadScene(gameObject.scene.buildIndex);
+            if(!star.IsDropped)
+            {
+                Debug.Log("Not Completed, restart");
+                SceneManager.LoadScene(gameObject.scene.buildIndex);
+            }
         }
-        else
-        {
-            Debug.Log("WIN");
-            SceneManager.LoadScene(_nextScene);
 
-        }
+        Debug.Log("WIN");
+        SceneManager.LoadScene(gameObject.scene.buildIndex + 1);
     }
 }
