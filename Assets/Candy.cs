@@ -29,10 +29,10 @@ public class Candy : MonoBehaviour
         if(_rigidbody == null)
             _rigidbody = GetComponent<Rigidbody2D>();
 
-        // Set rigidbody position directly using vectors
+        // Set rigidbody velocity directly using vectors
         if(_isInsideBubble)
         {
-            _rigidbody.MovePosition(_rigidbody.position + Vector2.up * .04f);
+            _rigidbody.velocity = Vector2.up * 2f;
         }
     }
 

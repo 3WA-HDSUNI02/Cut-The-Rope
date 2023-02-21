@@ -25,6 +25,7 @@ public class EventManager : MonoBehaviour
 
     #region Actions
     public UnityAction<HingeJoint2D> onChainBreak;
+    public UnityAction onCandyOutOfBounds;
     #endregion
 
     #region Methods
@@ -32,6 +33,12 @@ public class EventManager : MonoBehaviour
     {
         if (onChainBreak != null)
             onChainBreak(lastJoint);
+    }
+
+    public void OnCandyOutOfBounds()
+    {
+        if (onCandyOutOfBounds != null)
+            onCandyOutOfBounds();
     }
     #endregion
 }

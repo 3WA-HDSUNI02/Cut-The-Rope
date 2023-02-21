@@ -20,7 +20,12 @@ public class Level : MonoBehaviour
     {
         Monster = FindObjectOfType<Monster>();
         Monster.OnAteCandy += ManageLevelCompletion;
+        EventManager.Instance.onCandyOutOfBounds += OnLose;
+    }
 
+    private void OnDestroy()
+    {
+        EventManager.Instance.onCandyOutOfBounds -= OnLose;
     }
 
     private void ManageLevelCompletion()
@@ -31,11 +36,21 @@ public class Level : MonoBehaviour
         {
             if(!star.IsDropped)
             {
-                Debug.Log("Not Completed, restart");
-                SceneManager.LoadScene(gameObject.scene.buildIndex);
+                OnLose();
             }
         }
 
+        OnWin();
+    }
+
+    private void OnLose()
+    {
+        Debug.Log("Not Completed, restart");
+        SceneManager.LoadScene(gameObject.scene.buildIndex);
+    }
+
+    private void OnWin()
+    {
         Debug.Log("WIN");
         SceneManager.LoadScene(gameObject.scene.buildIndex + 1);
     }
